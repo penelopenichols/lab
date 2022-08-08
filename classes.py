@@ -6,39 +6,39 @@ class Television:
     MAX_VOLUME = 2      # Maximum TV volume
 
     def __init__(self):
-        self.channel = Television.MIN_CHANNEL
-        self.volume = Television.MIN_VOLUME
-        self.tvOn = False
+        self.__channel = Television.MIN_CHANNEL
+        self.__volume = Television.MIN_VOLUME
+        self.__tvOn = False
 
     def power(self):
-        if self.tvOn:
-            self.tvOn = False
+        if self.__tvOn:
+            self.__tvOn = False
         else:
-            self.tvOn = True
+            self.__tvOn = True
 
     def channel_up(self):
-        if self.tvOn:
-            if self.channel < Television.MAX_CHANNEL:
-                self.channel += 1
+        if self.__tvOn:
+            if self.__channel < Television.MAX_CHANNEL:
+                self.__channel += 1
             else:
-                self.channel = Television.MIN_CHANNEL
+                self.__channel = Television.MIN_CHANNEL
 
     def channel_down(self):
-        if self.tvOn:
-            if self.channel > Television.MIN_CHANNEL:
-                self.channel -= 1
+        if self.__tvOn:
+            if self.__channel > Television.MIN_CHANNEL:
+                self.__channel -= 1
             else:
-                self.channel = Television.MAX_CHANNEL
+                self.__channel = Television.MAX_CHANNEL
 
     def volume_up(self):
-        if self.tvOn:
-            if self.volume < Television.MAX_VOLUME:
-                self.volume += 1
+        if self.__tvOn:
+            if self.__volume < Television.MAX_VOLUME:
+                self.__volume += 1
 
     def volume_down(self):
-        if self.tvOn:
-            if self.volume > Television.MIN_VOLUME:
-                self.volume -= 1
+        if self.__tvOn:
+            if self.__volume > Television.MIN_VOLUME:
+                self.__volume -= 1
 
     def __str__(self):
-        return f"TV status: Is on = {self.tvOn}, Channel = {self.channel}, Volume = {self.volume}"
+        return f"TV status: Is on = {self.__tvOn}, Channel = {self.__channel}, Volume = {self.__volume}"
