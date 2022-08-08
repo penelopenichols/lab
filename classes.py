@@ -8,15 +8,15 @@ class Television:
     MIN_VOLUME = 0      # Minimum TV volume
     MAX_VOLUME = 2      # Maximum TV volume
 
-    def __init__(self):
+    def __init__(self) -> None:
         """
         Constructor to create initial state of Television object
         """
-        self.__channel = Television.MIN_CHANNEL
-        self.__volume = Television.MIN_VOLUME
-        self.__tvOn = False
+        self.__channel: int = Television.MIN_CHANNEL
+        self.__volume: int = Television.MIN_VOLUME
+        self.__tvOn: bool = False
 
-    def power(self):
+    def power(self) -> None:
         """
         Method to change bool __tvOn
         """
@@ -25,7 +25,7 @@ class Television:
         else:
             self.__tvOn = True
 
-    def channel_up(self):
+    def channel_up(self) -> None:
         """
         Method to increment int __channel by one if __tvOn is True,
         and if __channel is less than MAX_CHANNEL.
@@ -37,7 +37,7 @@ class Television:
             else:
                 self.__channel = Television.MIN_CHANNEL
 
-    def channel_down(self):
+    def channel_down(self) -> None:
         """
         Method to decrement int __channel by one if __tvOn is True,
         and if __channel is greater than MIN_CHANNEL.
@@ -49,7 +49,7 @@ class Television:
             else:
                 self.__channel = Television.MAX_CHANNEL
 
-    def volume_up(self):
+    def volume_up(self) -> None:
         """
         Method to increment __volume by one if __tvOn is True,
          and if __volume is less than MAX_VOLUME
@@ -58,7 +58,7 @@ class Television:
             if self.__volume < Television.MAX_VOLUME:
                 self.__volume += 1
 
-    def volume_down(self):
+    def volume_down(self) -> None:
         """
         Method to decrement __volume by one if __tvOn is True,
         and if __volume is greater than MIN_VOLUME
@@ -67,7 +67,7 @@ class Television:
             if self.__volume > Television.MIN_VOLUME:
                 self.__volume -= 1
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         Method to return the Television object's status
         including __tvOn, __channel, and __volume
