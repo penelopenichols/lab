@@ -52,7 +52,7 @@ class Television:
     def volume_up(self) -> None:
         """
         Method to increment __volume by one if __tvOn is True,
-         and if __volume is less than MAX_VOLUME
+        and if __volume is less than MAX_VOLUME
         """
         if self.__tvOn:
             if self.__volume < Television.MAX_VOLUME:
